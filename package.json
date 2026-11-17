@@ -1,0 +1,21 @@
+{
+  "name": "legado-web",
+  "private": true,
+  "version": "0.70.2",
+  "type": "module",
+  "scripts": {
+    "dev:server": "pnpm --filter @legado/server dev",
+    "dev:web": "pnpm --filter @legado/web dev",
+    "build": "pnpm --filter @legado/shared build && pnpm --filter @legado/engine build && pnpm --filter @legado/web build && pnpm --filter @legado/server build",
+    "test": "vitest run",
+    "seed": "pnpm --filter @legado/server seed",
+    "start": "node apps/server/dist/index.js"
+  },
+  "devDependencies": {
+    "better-sqlite3": "^13.0.3",
+    "iconv-lite": "^0.6.3",
+    "playwright-core": "^1.49.0",
+    "typescript": "^5.7.2",
+    "vitest": "^5.0.5"
+  }
+}
